@@ -7,7 +7,7 @@ import { FETCH_BOOKS, ADD_BOOK, UPDATE_BOOK, DELETE_BOOK } from './types';
 //Fetch books
 export const fetchBooks = () => async (dispatch) => {
     try {
-        const response = await axios.get("/api/book/");
+        const response = await axios.get("http://127.0.0.1:8000/api/book/");
         dispatch({ type: FETCH_BOOKS, payload: response.data });
     } catch (error) {
         console.error('Error fetching books', error);
@@ -18,7 +18,7 @@ export const fetchBooks = () => async (dispatch) => {
 export const addBook = (newBook) => async (dispatch) => {
     try {
         const response = await axios.post(
-          "/api/book/",
+          "http://127.0.0.1:8000/api/book/",
           newBook
         );
         dispatch({ type: ADD_BOOK, payload: response.data });
@@ -31,7 +31,7 @@ export const addBook = (newBook) => async (dispatch) => {
 export const updateBook = (id, updatedBook) => async (dispatch) => {
     try {
         const response = await axios.put(
-          "/api/book/${id}/",
+          "http://127.0.0.1:8000/api/book/${id}/",
           updatedBook
         );
         dispatch({ type: UPDATE_BOOK, payload: response.data });
@@ -43,7 +43,7 @@ export const updateBook = (id, updatedBook) => async (dispatch) => {
 // Delete book
 export const deleteBook = (id) => async (dispatch) => {
     try {
-        await axios.delete("/api/book/${id}/");
+        await axios.delete("http://127.0.0.1:8000/api/book/${id}/");
         dispatch({ type: DELETE_BOOK, payload: id });
     } catch (error) {
         console.error('Error deleting book', error);
