@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import bookReducer from './reducers/bookReducer';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = createStore(bookReducer, applyMiddleware(thunk));
+
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

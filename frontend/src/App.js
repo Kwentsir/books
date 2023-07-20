@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchBooks } from './actions/bookActions';
+import BookList from './components/BookList';
+import BookForm from './components/BookForm';
 import './App.css';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    //Fetch books from the API when the component mounts
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='app'>
+      <h1> Bookstore </h1>
+      <BookList />
+      <BookForm />
     </div>
   );
-}
+};
 
 export default App;
