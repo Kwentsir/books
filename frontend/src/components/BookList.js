@@ -7,7 +7,7 @@ const BookList = () => {
 
   return (
     <div id="book-list">
-      <h2>List of Books in the Library</h2>
+      <h2>List of Books in our Library</h2>
       <ul>
         {books.map((book) => (
           // Use BookItem component to render each book

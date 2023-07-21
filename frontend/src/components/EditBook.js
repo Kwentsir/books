@@ -94,7 +94,7 @@ const EditBook = () => {
           onChange={(e) => setYear(e.target.value)}
         />
       </div>
-      <button onClick={handleUpdate}>Update</button>
+      <button id="update-button" onClick={handleUpdate}>Update</button>
 
       {/* Render the BookItem component with the updated book details */}
       <BookItem

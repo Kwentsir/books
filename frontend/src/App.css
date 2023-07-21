@@ -15,24 +15,33 @@ h1 {
   text-align: center;
 }
 
-#book-list {
-  margin-bottom: 20px;
+#book-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+#book-list li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 
 #book-item {
   display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+background-color: aqua;
 }
 
-#book-item div {
-  display: flex;
-  margin: 5px;
-  align-items: center;
-  background-color: aquamarine;
-  flex-grow: 1;
+#book-item > div {
+flex: 1;
 }
 
 #book-item h3 {
@@ -40,50 +49,127 @@ h1 {
 }
 
 #book-item p {
-  margin-right: 10px;
+  margin: 0;
+  padding: 5px 0;
 }
 
-#book-item button {
-  margin-left: 10px;
-}
+
 
 .delete-button {
   color:white;
-    font-size: 16px;
+  margin: 2px;
   background-color: red;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .edit-button {
   color: white;
-  font-size: 16px;
-  background-color: darkblue;
+  margin: 2px;
+  background-color: black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: lightskyblue;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#book-form h2 {
   margin-bottom: 20px;
 }
 
-form {
+#book-form form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-label {
+#book-form label {
+  margin-bottom: 5px;
+}
+
+#book-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#book-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#book-form button:hover {
+  background-color: #0056b3;
+}
+
+#edit-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: lightskyblue;
+  text-align: center;
+}
+
+#edit-book h2 {
+  text-align: center;
+}
+
+#edit-book div {
+  margin-bottom: 10px;
+}
+
+#edit-book label {
+  display: flex;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-input {
-  margin-bottom: 10px;
-  padding: 5px;
+#update-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  #book-list {
+    padding: 10px;
+  }
+
+  #book-list li {
+    padding: 10px;
+  }
 }
 
-li {
-  margin-bottom: 5px;
-}
