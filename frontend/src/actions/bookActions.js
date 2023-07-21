@@ -28,22 +28,22 @@ export const addBook = (newBook) => async (dispatch) => {
 };
 
 // Update book
-export const updateBook = (id, updatedBook) => async (dispatch) => {
+export const updateBook = (book, id) => async (dispatch) => {
     try {
         const response = await axios.put(
-          "http://127.0.0.1:8000/api/book/${id}/",
-          updatedBook
+          `http://127.0.0.1:8000/api/book/${id}`,
+          book
         );
         dispatch({ type: UPDATE_BOOK, payload: response.data });
     } catch (error) {
-        console.error('Error updating book:', error);
+        console.error('Error updating book:', error.response);
     }
 };
 
 // Delete book
 export const deleteBook = (id) => async (dispatch) => {
     try {
-        await axios.delete("http://127.0.0.1:8000/api/book/${id}/");
+        await axios.delete(`http://127.0.0.1:8000/api/book/${id}/`);
         dispatch({ type: DELETE_BOOK, payload: id });
     } catch (error) {
         console.error('Error deleting book', error);
