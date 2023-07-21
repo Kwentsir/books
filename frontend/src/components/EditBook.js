@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, redirect } from "react-router-dom";
 import { updateBook } from "../actions/bookActions";
 import BookItem from "./BookItem"; // Import the BookItem component
 
@@ -15,6 +15,9 @@ const EditBook = () => {
     const [author, setAuthor] = useState("");
     const [year, setYear] = useState("");
 
+  // New state variable to track update status
+  const [isUpdated, setIsUpdated] = useState(false);
+
   useEffect(() => {
 
     if (book) {
@@ -23,6 +26,7 @@ const EditBook = () => {
       setYear(book.year);
     }
   }, [book]);
+
 
   const handleUpdate = () => {
     // Check if the book prop is defined before proceeding
@@ -39,8 +43,25 @@ const EditBook = () => {
     };
 
     // Dispatch the updatedBook action with the updated book
-    dispatch(updateBook(updatedBook, book.id));
+  dispatch(updateBook(updatedBook, book.id)).then((response) => {
+    // Check if book was successfully updated
+    if(response && response.data && response.data.id){
+         setIsUpdated(true);
+    }
+ 
+   })
+     .catch((error) => {
+      console.error("Error updating book:", error);
+     });
   };
+
+  //Redirect to homepage after successful update
+  
+ useEffect(() => {
+  if(isUpdated){
+    redirect("/");
+  }
+ }, [isUpdated]);
 
   if (!book) {
     return <div>Loading...</div>; // Or any other loading state or message

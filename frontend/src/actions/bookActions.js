@@ -34,6 +34,7 @@ export const updateBook = (book, id) => async (dispatch) => {
            `http://127.0.0.1:8000/api/book/${id}/`, book);
        
         dispatch({ type: UPDATE_BOOK, payload: response.data });
+        return response.data;
     } catch (error) {
         console.error('Error updating book:', error);
     }
