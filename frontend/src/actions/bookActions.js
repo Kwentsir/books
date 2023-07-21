@@ -30,13 +30,12 @@ export const addBook = (newBook) => async (dispatch) => {
 // Update book
 export const updateBook = (book, id) => async (dispatch) => {
     try {
-        const response = await axios.put(
-          `http://127.0.0.1:8000/api/book/${id}`,
-          book
-        );
+         const response = await axios.put(
+           `http://127.0.0.1:8000/api/book/${id}/`, book);
+       
         dispatch({ type: UPDATE_BOOK, payload: response.data });
     } catch (error) {
-        console.error('Error updating book:', error.response);
+        console.error('Error updating book:', error);
     }
 };
 

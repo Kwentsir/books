@@ -8,7 +8,11 @@ const EditButton = ({ id }) => {
     navigate(`/edit/${id}`);
   };
 
-  return <button onClick={handleEdit}>Edit</button>;
+  return (
+    <button className="edit-button" onClick={handleEdit}>
+      Edit
+    </button>
+  );
 };
 
 export default EditButton;

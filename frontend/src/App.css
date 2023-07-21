@@ -19,6 +19,46 @@ h1 {
   margin-bottom: 20px;
 }
 
+#book-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#book-item div {
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  background-color: aquamarine;
+  flex-grow: 1;
+}
+
+#book-item h3 {
+  margin-right: 10px;
+}
+
+#book-item p {
+  margin-right: 10px;
+}
+
+#book-item button {
+  margin-left: 10px;
+}
+
+.delete-button {
+  color:white;
+    font-size: 16px;
+  background-color: red;
+}
+
+.edit-button {
+  color: white;
+  font-size: 16px;
+  background-color: darkblue;
+}
+
 #book-form {
   margin-bottom: 20px;
 }

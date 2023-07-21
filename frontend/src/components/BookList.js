@@ -7,11 +7,11 @@ const BookList = () => {
 
   return (
     <div id="book-list">
-      <h2>Book List</h2>
+      <h2>List of Books in the Library</h2>
       <ul>
         {books.map((book) => (
           // Use BookItem component to render each book
-          <li key={book.id}>
+          <li id="book-item"  key={book.id}>
             <BookItem book={book} />
           </li>
         ))}

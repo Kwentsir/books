@@ -5,11 +5,15 @@ import DeleteButton from "./DeleteButton";
 const BookItem = ({ book }) => {
   return (
     <div id="book-item">
-      <h2>{book.title}</h2>
-      <p>Author: {book.author}</p>
-      <p>Year: {book.year}</p>
-      <EditButton id={book.id} />
-      <DeleteButton id={book.id} />
+      <div>
+        <p>{book.title}</p>
+        <p>Author: {book.author}</p>
+        <p>Year: {book.year}</p>
+      </div>
+      <div>
+        <EditButton  id={book.id} />
+        <DeleteButton id={book.id} />
+      </div>
     </div>
   );
 };

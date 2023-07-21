@@ -9,7 +9,11 @@ const DeleteButton = ({ id }) => {
     dispatch(deleteBook(id));
   };
 
-  return <button onClick={handleDelete}>Delete</button>;
+  return (
+    <button className="delete-button" onClick={handleDelete}>
+      Delete
+    </button>
+  );
 };
 
 export default DeleteButton;

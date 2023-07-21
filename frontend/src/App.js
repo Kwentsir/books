@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <div id="app">
-        <h1>Bookstore</h1>
+        <h1> Modenbo Bookstore</h1>
         <Routes>
           <Route path="/" element={<BookList />} />
           <Route path="/edit/:id" element={<EditBook />} />
