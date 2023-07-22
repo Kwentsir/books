@@ -14,26 +14,23 @@ The Book Library Application is a web-based platform that allows users to manage
 #### Installation
 
 1. Clone the repository
-``` git clone https://github.com/Kwentsir/books.git
-    cd books
-```
+`git clone https://github.com/Kwentsir/books.git
+    cd books`
 
 2. Create a virtual environment
-``` python3 -m venv venv source venv/bin/activate   # On Windows, use "venv\Scripts\activate"
-```
+`python3 -m venv venv source venv/bin/activate   # On Windows, use "venv\Scripts\activate"`
+
 
 3. Install the required packages
-``` pip install -r requirements.txt ```
+`pip install -r requirements.txt`
 
 4. Create the PostgreSQL database and configure settings in `books/settings.py`
 
 5. Run migrations
-``` python manage.py migrate
-```
+`python manage.py migrate`
 
 6. Start the Django development server
-```python manage.py runserver
-```
+`python manage.py runserver`
 
 7. The backend API is now accessible at `http://localhost:8000/api/book`.
 
@@ -47,13 +44,13 @@ The Book Library Application is a web-based platform that allows users to manage
 #### Installation
 
 1. Navigate to the frontend folder
-``` cd ./frontend ```
+`cd ./frontend`
 
 2. Install the required packages
-```npm install```
+`npm install`
 
 3. Start the development server
-```npm start```
+`npm start`
 
 4. The frontend application will be accessible at `http://localhost:3000/`
 
@@ -70,9 +67,9 @@ The Book Library Application is a web-based platform that allows users to manage
 5. To delete a book, click on the "Delete" button next to the book you want to remove.
 
 
-###Contributing
+### Contributing
 If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 
-###License
+### License
 This project is licensed under the MIT License.
