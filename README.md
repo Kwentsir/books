@@ -2,6 +2,12 @@
 
 The Book Library Application is a web-based platform that allows users to manage and view a collection of books. It consists of a backend developed with Django Rest Framework (DRF) to provide API endpoints and a frontend developed with React-Redux for the user interface.
 
+### Book List Hompage
+![Book List Homepage](screencapture-localhost-3000-2023-07-22-10_05_13.png)
+
+### Edit Book Page
+![Edit Book Page](screencapture-localhost-3000-edit-15-2023-07-22-10_07_13.png)
+
 
 ## Backend Setup
 
