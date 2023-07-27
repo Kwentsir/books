@@ -17,6 +17,7 @@ const EditBook = () => {
 
   // New state variable to track update status
   const [isUpdated, setIsUpdated] = useState(false);
+   const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -27,7 +28,6 @@ const EditBook = () => {
     }
   }, [book]);
 
-  const navigate = useNavigate();
   const handleUpdate = () => {
     // Check if the book prop is defined before proceeding
     if (!book) {
@@ -43,7 +43,8 @@ const EditBook = () => {
     };
 
     // Dispatch the updatedBook action with the updated book
-  dispatch(updateBook(updatedBook, book.id)).then((response) => {
+  dispatch(updateBook(updatedBook, book.id))
+  .then((response) => {
     // Check if book was successfully updated
     if(response && response.data && response.data.id){
          setIsUpdated(true);
