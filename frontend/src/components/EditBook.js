@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, redirect } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { updateBook } from "../actions/bookActions";
 import BookItem from "./BookItem"; // Import the BookItem component
 
@@ -27,7 +27,7 @@ const EditBook = () => {
     }
   }, [book]);
 
-
+  const navigate = useNavigate();
   const handleUpdate = () => {
     // Check if the book prop is defined before proceeding
     if (!book) {
@@ -59,9 +59,9 @@ const EditBook = () => {
   
  useEffect(() => {
   if(isUpdated){
-    redirect("/");
+    navigate("/");
   }
- }, [isUpdated]);
+ }, [isUpdated, navigate]);
 
   if (!book) {
     return <div>Loading...</div>; // Or any other loading state or message
